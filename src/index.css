@@ -1,28 +1,37 @@
+/* Import variable fonts from Google Fonts (Georama + Roboto Mono) */
 @import url("https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
+/* Import Tailwind CSS framework */
 @import "tailwindcss";
 
-/*@import "tw-animate-css";*/
+/* Optional animation utilities (currently disabled) */
+/*@import "tw-animate-css"; */
 
+/* Custom dark mode variant using `.dark` class */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Global layout + background setup */
 html,
 body {
   @apply w-dvw h-dvh overflow-hidden bg-[url('/images/wallpaper.png')] bg-cover bg-no-repeat bg-center;
 }
 
+/* Design tokens (Tailwind v4 theme configuration) */
 @theme {
+    /* Font families */
   --font-georama: "Georama", sans-serif;
   --font-roboto: "Roboto Mono", monospace;
+
+    /* Custom breakpoints */
+    --breakpoint-xs: 360px;
   --breakpoint-3xl: 1920px;
 
-  --color-dark-800: rgba(255, 255, 255, 0.1);
+    /* Custom dark color palette */
+    --color-dark-800: rgba(255, 255, 255, 0.1);
   --color-dark-700: #1e1e1e;
   --color-dark-500: rgba(30, 30, 30, 0.8);
   --color-dark-300: #323232;
   --color-dark-100: rgba(255, 255, 255, 0.25);
-
-  --breakpoint-xs: 360px;
 }
 
 @utility flex-center {
